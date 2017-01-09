@@ -1,0 +1,20 @@
+{
+  "name": "realtime-typescript-react-chat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Realtime.co",
+  "license": "MIT",
+  "dependencies": {
+    "@types/react": "0.0.0",
+    "@types/react-dom": "^0.14.20",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "realtime-messaging": "^2.1.34"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^3.0.0-beta.17",
+    "source-map-loader": "^0.1.5",
+    "typescript": "^2.1.4"
+  }
+}
