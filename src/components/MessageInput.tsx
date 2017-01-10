@@ -2,7 +2,7 @@ import * as React from "react";
 import * as Realtime from 'realtime-messaging';
 
 export interface MessageInputProps {
-    realtime: Realtime.client;
+    realtime: Realtime.Client;
     chatId: string;
     channel: string;
 }

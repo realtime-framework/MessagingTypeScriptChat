@@ -15,7 +15,7 @@ interface ChatState {
 }
 
 export class Chat extends React.Component<ChatProps, ChatState> {
-    realtime: Realtime.client;  // the Realtime connection
+    realtime: Realtime.Client;  // the Realtime connection
     channel: string;            // the chat Realtime pub/sub channel
     ID: string;                 // the user random ID to use as nickname and subscriberId
 
@@ -48,14 +48,14 @@ export class Chat extends React.Component<ChatProps, ChatState> {
     }
 
     // Realtime connection is established
-    onRealtimeConnected(client: Realtime.client) {
+    onRealtimeConnected(client: Realtime.Client) {
         console.log("Realtime connected. Subscribing with subscriberId", this.ID);
         // subscribe the chat channel to receive messages
         client.subscribeWithBuffer(this.channel, this.ID, this.onRealtimeChatMessage.bind(this));
     }
 
     // A new message was received in the chat Realtime channel
-    onRealtimeChatMessage(client: Realtime.client, channel: string, seqId: string, message: string) {
+    onRealtimeChatMessage(client: Realtime.Client, channel: string, seqId: string, message: string) {
         console.log("Received message with seqId:", seqId);
 
         // parse the chat message
@@ -92,7 +92,7 @@ export class Chat extends React.Component<ChatProps, ChatState> {
     }
 
     // A Realtime exception ocourred
-    onRealtimeException(client: Realtime.client, exception: string) {
+    onRealtimeException(client: Realtime.Client, exception: string) {
         console.log("Realtime Exception:", exception);
     }
 
